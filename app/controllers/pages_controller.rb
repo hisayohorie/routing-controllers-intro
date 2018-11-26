@@ -22,12 +22,12 @@ class PagesController < ApplicationController
 
   def contest
     flash[:notice] ="Sorry the contest has ended"
-    redirect_to "/welcome"
+    redirect_to welcome_path
   end
 
   def secrets
     if params[:magic_word] != "toast"
-      redirect_to "/welcome"
+      redirect_to welcome_path
       flash[:notice] ="sorry not authorized"
     end
   end
